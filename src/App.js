@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Header from './components/Header';
+import SearchBar from './components/SearchBar';
+import ProductCard from './components/ProductCard';
+import './styles/App.css';
 
-function App() {
+const App = () => {
+  const [products, setProducts] = useState([]);
+
+  const handleSearch = async (query) => {
+    // Simulamos una búsqueda con datos dummy
+    const dummyResults = [
+      {
+        id: 1,
+        name: 'Producto de ejemplo Amazon',
+        price: '$100',
+        source: 'Amazon',
+        link: 'https://amazon.com',
+      },
+      {
+        id: 2,
+        name: 'Producto de ejemplo MercadoLibre',
+        price: '$90',
+        source: 'MercadoLibre',
+        link: 'https://mercadolibre.com',
+      },
+    ];
+    setProducts(dummyResults);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <SearchBar onSearch={handleSearch} />
+      <div className="products-container">
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
