@@ -1,0 +1,100 @@
+.calculator-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.calculator-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+  font-weight: 600;
+}
+
+.calculator-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input[type="number"] {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fafafa;
+  transition: border-color 0.2s;
+}
+
+.form-group input[type="number"]:focus {
+  border-color: #aaa;
+  outline: none;
+}
+
+.taxes-checkboxes {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.checkbox input {
+  margin-right: 8px;
+}
+
+.checkbox label {
+  color: #555;
+}
+
+.summary {
+  margin-top: 40px;
+}
+
+.summary h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+.summary table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.summary td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+.summary td:first-child {
+  font-weight: 500;
+}
+
+.summary td:last-child {
+  text-align: right;
+}
