@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
+import ImportCalculator from './components/ImportCalculator';
 import SearchBar from './components/SearchBar';
 import ProductCard from './components/ProductCard';
 import './styles/App.css';
@@ -31,11 +32,14 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <SearchBar onSearch={handleSearch} />
-      <div className="products-container">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+      <div className="main-content">
+        <ImportCalculator />
+        <SearchBar onSearch={handleSearch} />
+        <div className="products-container">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
       </div>
     </div>
   );
