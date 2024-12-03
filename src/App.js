@@ -11,6 +11,13 @@ const App = () => {
     // Simulamos una búsqueda con datos dummy
     const dummyResults = [
       {
+        id: 1,
+        name: 'Producto de ejemplo Amazon',
+        price: '$100',
+        source: 'Amazon',
+        link: 'https://amazon.com',
+      },
+      {
         id: 2,
         name: 'Producto de ejemplo MercadoLibre',
         price: '$90',
